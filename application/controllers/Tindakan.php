@@ -19,20 +19,13 @@ class Tindakan extends CI_Controller {
 
 	public function savedata()
 	{
-		
-		if(isset($_POST['submit']))
-		{
-		    $no_registrasi 	= $this->input->post('no_registrasi');
-		    $no_rm 			= $this->input->post('no_rm');
-
-		    $data = array(
-		        'no_registrasi' => $no_registrasi,
-		        'no_rm' 		=> $no_rm
-		    );
-
-		    $this->load->mod_tindakan->insert_users($data);
-		}
-
+		$insert = array();
+		$insert['no_registrasi'] = $_POST['no_registrasi'];
+		$insert['no_rm'] = $_POST['no_rm'];
+		    
+		$this->mod_tindakan->insert_users($insert);
+		 
+		redirect('tindakan/index');
 	}
 
 }

@@ -8,9 +8,14 @@ class Mod_tindakan extends CI_Model {
         parent::__construct();
  	}
 
- 	function insert_users($data){
-        $this->db->insert('inputrm', $data);
-        return;
+ 	function insert_users($insert){
+ 		$data = array(
+		    'no_registrasi' => $insert['no_registrasi'],
+		    'no_rm' 		=> $insert['no_rm'],
+		);
+
+        $query = $this->db->insert('inputrm', $data);
+        
     }
 
 }

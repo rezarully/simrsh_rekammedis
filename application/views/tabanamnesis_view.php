@@ -1,4 +1,3 @@
-
               <div id="anamnesis" class="tab-pane fade">
                 <br>
                 <br>

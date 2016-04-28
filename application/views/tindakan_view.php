@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li role="presentation"><a data-toggle="tab" href="#obatobatan">Obat-obatan</a></li>
             <li role="presentation"><a data-toggle="tab" href="#tindakan">Tindakan</a></li>
           </ul>
+            <form action="<?php echo base_url("index.php/tindakan/savedata");?>" method="POST">
             <div class="tab-content">
               <!-- TAB BAG. DATA PASIEN -->
               <?php $this->load->view('tabdatapasien_view'); ?>
@@ -50,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <?php $this->load->view('tabtindakan_view'); ?>
             </div>
 
+            </form>     
             <!-- JS UNTUK TAB --> 
             <script>
               $(document).ready(function(){

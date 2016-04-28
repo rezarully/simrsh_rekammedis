@@ -1,4 +1,4 @@
-            <form action="<?php echo base_url("index.php/tindakan/savedata");?>" method="POST">
+
               <div id="datapasien" class="tab-pane fade in active">
                 <br>
                 <br>

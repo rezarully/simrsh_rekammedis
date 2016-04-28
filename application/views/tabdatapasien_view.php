@@ -1,18 +1,19 @@
+            <form action="<?php echo base_url("index.php/tindakan/savedata");?>" method="POST">
               <div id="datapasien" class="tab-pane fade in active">
                 <br>
                 <br>
                   <div class="col-md-6">
-                    <form class="form-horizontal" method="POST" action="<?php echo base_url();?>index.php/tindakan/gettindakan">
+                    <div class="form-horizontal">
                       <div class="form-group">
                         <label for="noregistrasi" class="col-md-4">No. Registrasi</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="noregistrasi" id="noregistrasi">
+                          <input type="text" class="form-control" name="no_registrasi" id="noregistrasi">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="norm" class="col-md-4">No. Rekam Medis</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="norm" id="norm">
+                          <input type="text" class="form-control" name="no_rm" id="norm">
                         </div>
                       </div>
                       <div class="form-group">
@@ -33,10 +34,10 @@
                           <input type="text" class="form-control" name="jenishewan" id="jenishewan">
                         </div>
                       </div>
-                    </form>
+                    </div>
                   </div>
                   <div class="col-md-6">
-                    <form class="form-horizontal" method="POST" action="<?php echo base_url();?>index.php/tindakan/gettindakan">
+                    <div class="form-horizontal">
                       <div class="form-group">
                         <label for="signalemen" class="col-md-4">Signalemen</label>
                         <div class="col-md-3">
@@ -64,7 +65,7 @@
                           <input type="text" class="form-control" name="mahasiswakoas" id="mahasiswakoas">
                         </div>
                       </div>
-                    </form>
+                    </div>
                   </div>
                   <!-- RIWAYAT PASIEN -->
                   <div class="col-md-12">

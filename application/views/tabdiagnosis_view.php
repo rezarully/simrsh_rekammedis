@@ -6,11 +6,7 @@
                       <div class="form-group">
                         <label for="diagnosis" class="col-md-2">Diagnosis</label>
                         <div class="col-md-2">
-                          <select name="diagnosis" id="diagnosis" class="form-control" required>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                          </select> 
+                          <input name="diagnosis" id="diagnosis" class="form-control"></input>
                         </div>
                       </div>
                       <div class="form-group">

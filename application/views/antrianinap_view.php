@@ -18,6 +18,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <body>
 
+  <style>
+  .modal.modal-wide .modal-dialog 
+    {
+      width: 90%;
+    }
+  .modal-wide .modal-body 
+    {
+      overflow-y: auto;
+    }
+  .modal-title
+    {
+      text-align: center;
+    }
+  </style>
+
+  <script>
+  $(".modal-wide").on("show.bs.modal", function() {
+  var height = $(window).height() - 200;
+  $(this).find(".modal-body").css("max-height", height);
+  });
+  </script>
+
   <?php $this->load->view('menu_view'); ?>
     <!-- RIWAYAT PASIEN BAG. TABEL -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -54,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <td></td>
               <td></td>
               <td></td>
-              <td><a href="<?php echo base_url();?>index.php/tindakan">Tambah</a> | <a href="#">Selesai</a></td>
+              <td><a data-target="#forminap" data-toggle="modal">Tambah</a> | <a href="#">Selesai</a></td>
             </tr>
             <tr>
               <td></td>
@@ -62,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <td></td>
               <td></td>
               <td></td>
-              <td><a href="<?php echo base_url();?>index.php/tindakan">Tambah</a> | <a href="#">Selesai</a></td>
+              <td><a data-target="#forminap" data-toggle="modal">Tambah</a> | <a href="#">Selesai</a></td>
             </tr>
             <tr>
               <td></td>
@@ -70,11 +92,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <td></td>
               <td></td>
               <td></td>
-              <td><a href="<?php echo base_url();?>index.php/tindakan">Tambah</a> | <a href="#">Selesai</a></td>
+              <td><a data-target="#forminap" data-toggle="modal">Tambah</a> | <a href="#">Selesai</a></td>
             </tr>
           </tbody>
         </table>
       </div>
+       <!--Formulir Inap -->
+      <div class="modal modal-wide fade" id="forminap">
+        <?php $this->load->view('forminap'); ?>
+      </div>
+
     </div>
   </body>
 </html>

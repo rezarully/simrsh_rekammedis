@@ -39,13 +39,11 @@
                         <input type="checkbox" onclick='window.location.assign("application/views/antrianinap_view")'> Tambahkan ke daftar rawat inap
                       </label>
                     </div>
-                    <nav>
-                      <ul class="pager">
-                        <li class="pull-right"><a href="#" id="selanjutnya6">Simpan</a></li>
-                        <li class="pull-right"><a href="#" id="batal6">Batal</a></li>
-                      </ul>
-                    </nav>
+                    <div class="form-actions pull-right">
+                      <button class="btn btn-primary" type="submit" name="submit" value="submit">Simpan</button>
+                      <button class="btn btn-default" type="button">Batal</button>
+                    </div>
                   </div>
               </div>
 
-              
+  </form>     

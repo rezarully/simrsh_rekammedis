@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
             <div class="input-group date">
               <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-            </div>
+            </div>x
       </form>
     </div>
   </body>

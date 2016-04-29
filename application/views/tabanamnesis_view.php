@@ -12,46 +12,46 @@
                       <div class="form-group">
                         <label for="keadaanumum" class="col-md-2">Keadaan Umum</label>
                         <div class="col-md-5">
-                          <textarea class="form-control" name="keadaanumum" rows="4"></textarea>
+                          <textarea class="form-control" name="keadaan_umum" rows="4"></textarea>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="frekuensinafas" class="col-md-2">Frekuensi Nafas</label>
                         <div class="col-md-1">
-                          <input type="number" class="form-control" name="frekuensinafas">
+                          <input type="number" class="form-control" name="frek_nafas">
                         </div>
                         <h5>/mnt</h5>
                       </div>
                       <div class="form-group">
                         <label for="frekuensipulsus" class="col-md-2">Frekuensi Pulsus</label>
                         <div class="col-md-1">
-                          <input type="number" class="form-control" name="frekuensipulsus">
+                          <input type="number" class="form-control" name="frek_pulsus">
                         </div>
                         <h5>/mnt</h5>
                       </div>
                       <div class="form-group">
                         <label for="temperaturtubuh" class="col-md-2">Temperatur Tubuh</label>
                         <div class="col-md-1">
-                          <input type="number" class="form-control" name="temperaturtubuh">
+                          <input type="number" class="form-control" name="temperatur_tubuh">
                         </div>
                         <h5>'C</h5>
                       </div>
                       <div class="form-group">
                         <label for="kulitdanrambut" class="col-md-2">Kulit dan Rambut</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="kulitdanrambut">
+                          <input type="text" class="form-control" name="kulit_rambut">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="selaputlendir" class="col-md-2">Selaput Lendir</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="selaputlendir">
+                          <input type="text" class="form-control" name="selaput_lendir">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="kelenjarlimfe" class="col-md-2">Kelenjar-Kelenjar Limfe</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="kelenjarlimfe">
+                          <input type="text" class="form-control" name="kelenjar_limfe">
                         </div>
                       </div>
                       <div class="form-group">
@@ -63,7 +63,7 @@
                       <div class="form-group">
                         <label for="peredarandarah" class="col-md-2">Peredaran Darah</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="peredarandarah">
+                          <input type="text" class="form-control" name="peredaran_darah">
                         </div>
                       </div>
                       <div class="form-group">
@@ -75,7 +75,7 @@
                       <div class="form-group">
                         <label for="kelamindanperkencingan" class="col-md-2">Kelamin dan Perkencingan</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="kelamindanperkencingan">
+                          <input type="text" class="form-control" name="kelamin_perkencingan">
                         </div>
                       </div>
                       <div class="form-group">
@@ -87,20 +87,20 @@
                       <div class="form-group">
                         <label for="anggotagerak" class="col-md-2">Anggota Gerak</label>
                         <div class="col-md-5">
-                          <input type="text" class="form-control" name="anggotagerak">
+                          <input type="text" class="form-control" name="anggota_gerak">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="beratbadan" class="col-md-2">Berat Badan</label>
                         <div class="col-md-1">
-                          <input type="number" class="form-control" name="beratbadan">
+                          <input type="number" class="form-control" name="berat_badan">
                         </div>
                         <h5>Gram</h5>
                       </div>
                       <div class="form-group">
                         <label for="lainlain" class="col-md-2">Lain-Lain</label>
                         <div class="col-md-5">
-                          <textarea class="form-control" name="lainlain" rows="4"></textarea>
+                          <textarea class="form-control" name="lain_anamnesis" rows="4"></textarea>
                         </div>
                       </div>
                     </div>

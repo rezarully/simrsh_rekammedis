@@ -6,7 +6,7 @@
                       <div class="form-group">
                         <label for="tind" class="col-md-2">Tindakan</label>
                         <div class="col-md-2">
-                          <select name="tind" id="tind" class="form-control" required>
+                          <select name="id_tindakan" id="tind" class="form-control">
                             <option value='1'>1</option>
                             <option value='2'>2</option>
                             <option value='3'>3</option>
@@ -16,13 +16,13 @@
                       <div class="form-group">
                         <label for="qty" class="col-md-2">Qty</label>
                         <div class="col-md-2">
-                          <input type="text" class="form-control" id="dosisobat">
+                          <input type="text" class="form-control" name="qty_tindakan">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="keterangan" class="col-md-2">Keterangan</label>
                         <div class="col-md-5">
-                          <textarea class="form-control" rows="4"></textarea>
+                          <textarea class="form-control" name="ket_tindakan" rows="4"></textarea>
                         </div>
                       </div>
                       <button type="submit" class="buttontindakan btn btn-primary">Tambah Tindakan</button>

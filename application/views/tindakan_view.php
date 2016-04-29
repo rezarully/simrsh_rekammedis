@@ -334,31 +334,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $(document).on("click", ".buttontindakanbatal", remove);
             </script>
 
-            <!-- <script>
-            $( document ).ready(function(){
-            $("#selanjutnya1").click(function(){
-                $(".nav-tabs a[href='#anamnesis']").tab("show")
-            });
-            $("#selanjutnya2").click(function(){
-                $(".nav-tabs a[href='#lab']").tab("show")
-            });
-            $("#selanjutnya3").click(function(){
-                $(".nav-tabs a[href='#diagnosisprognosis']").tab("show")
-            });
-            $("#selanjutnya4").click(function(){
-                $(".nav-tabs a[href='#obatobatan']").tab("show")
-            });
-            $("#selanjutnya5").click(function(){
-                $(".nav-tabs a[href='#tindakan']").tab("show")
-            });
-            });
-            </script> -->
-            
-            <script type="text/javascript">
-              $('.input-group.date').datepicker({
-              });
-            </script>
-
             <script type="text/javascript">
                 $(".chosen-select").chosen({
                 width: "410px",

@@ -20,6 +20,7 @@ class Tindakan extends CI_Controller {
 	public function savedata()
 	{
 		$insert = array();
+		$insert['waktu'] 				= $_POST['waktu'];
 		$insert['no_registrasi'] 		= $_POST['no_registrasi'];
 		$insert['no_rm'] 				= $_POST['no_rm'];
 		$insert['nama_pemilik'] 		= $_POST['nama_pemilik'];

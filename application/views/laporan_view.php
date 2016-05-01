@@ -29,13 +29,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h4 style="text-align:left">Laporan</h4>
       <hr>
       <!--PILIH TANGGAL -->
-      <div class="input-group col-md-12">
-      <label class="col-md-2">Pilih Tanggal</label>
-        <div class="form-control col-md-5" style="width: 260px">
+      <div class="col-md-12">
+        <label class="col-md-2" style="padding-left:0px">Pilih Tanggal</label>
+        <div class="form-control col-md-4" style="width: 230px">
           <div id="reportrange" class="pull-left">
-            <i class="glyphicon glyphicon-calendar icon-calendar icon-large"></i><b class="caret"></b>
+            <i class="glyphicon glyphicon-calendar icon-calendar icon-large"></i>
+            <span></span>
           </div>
 
+          <!-- JS UNTUK DATEPICKER -->
           <script type="text/javascript">
             var startDate;
             var endDate;
@@ -61,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                        'This Month': [moment().startOf('month'), moment().endOf('month')],
                        'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
                     },
-                    opens: 'left',
+                    opens: 'center',
                     buttonClasses: ['btn btn-default'],
                     applyClass: 'btn-small btn-primary',
                     cancelClass: 'btn-small',
@@ -92,11 +94,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   console.log(startDate.format('D MMMM YYYY') + ' - ' + endDate.format('D MMMM YYYY'));
               });
             });
-          </script> 
+          </script>
 
         </div>
       </div>
-      <!--END OF PILIH TANGGAL -->
 
     </div>
   </body>

@@ -4,6 +4,12 @@
                   <div class="col-md-6">
                     <div class="form-horizontal">
                       <div class="form-group">
+                        <label for="jenishewan" class="col-md-4">Waktu</label>
+                        <div class="col-md-5">
+                          <input type="date" class="form-control" name="waktu">
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label for="noregistrasi" class="col-md-4">No. Registrasi</label>
                         <div class="col-md-5">
                           <input type="text" class="form-control" name="no_registrasi" id="no_registrasi">
@@ -27,16 +33,16 @@
                           <input type="text" class="form-control" name="nama_hewan" id="nama_hewan">
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-horizontal">
                       <div class="form-group">
                         <label for="jenishewan" class="col-md-4">Jenis Hewan</label>
                         <div class="col-md-5">
                           <input type="text" class="form-control" name="jenis_hewan" id="jenis_hewan">
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-horizontal">
                       <div class="form-group">
                         <label for="signalemen" class="col-md-4">Signalemen</label>
                         <div class="col-md-3">

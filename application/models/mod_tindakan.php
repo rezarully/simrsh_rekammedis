@@ -10,6 +10,7 @@ class Mod_tindakan extends CI_Model {
 
  	function insert_users($insert){
  		$data = array(
+ 			'waktu' 				=> $insert['waktu'],
 		    'no_registrasi' 		=> $insert['no_registrasi'],
 		    'no_rm' 				=> $insert['no_rm'],
 		    'nama_pemilik' 			=> $insert['nama_pemilik'],

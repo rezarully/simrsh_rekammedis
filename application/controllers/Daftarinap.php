@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tindakaninap extends CI_Controller {
+class Daftarinap extends CI_Controller {
 
 	function __construct()
     {
@@ -14,7 +14,7 @@ class Tindakaninap extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('tindakaninap_view');
+		$this->load->view('daftarinap_view');
 	}
 
 	public function savedatainap()
@@ -39,8 +39,9 @@ class Tindakaninap extends CI_Controller {
   
 		$this->mod_tindakaninap->insert_users_inap($insert);
 		 
-		redirect('tindakaninap/index');
+		redirect('daftarinap/index');
 	}
+
 }
 
 ?>

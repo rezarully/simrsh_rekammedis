@@ -42,19 +42,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="form-group">
                 <label for="noregistrasi" class="col-md-4">No. Registrasi</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="noregistrasi">
+                  <input type="text" class="form-control" id="no_registrasi">
                 </div>
               </div>
               <div class="form-group">
                 <label for="norm" class="col-md-4">No. Rekam Medis</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="norm">
+                  <input type="text" class="form-control" id="no_rm">
                 </div>
               </div>
               <div class="form-group">
                 <label for="namapemilik" class="col-md-4">Nama Pemilik</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="namapemilik">
+                  <input type="text" class="form-control" id="nama_pemilik">
                 </div>
               </div>
             </form>
@@ -64,22 +64,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="form-group">
                 <label for="namahewan" class="col-md-4">Nama Hewan</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="namahewan">
+                  <input type="text" class="form-control" id="nama_hewan">
                 </div>
               </div>
               <div class="form-group">
                 <label for="jenishewan" class="col-md-4">Jenis Hewan</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="jenishewan">
+                  <input type="text" class="form-control" id="jenis_hewan">
                 </div>
               </div>
               <div class="form-group">
                 <label for="signalemen" class="col-md-4">Signalemen</label>
                 <div class="col-md-3">
-                  <input type="text" class="form-control" name="signalementtl" id="signalementtl">
+                  <input type="text" class="form-control" name="signalemen_ttl" id="signalementtl">
                 </div>
                 <div class="col-md-2">
-                  <input type="text" class="form-control" name="siganlemenkelamin" id="siganelemenkelamin">
+                  <input type="text" class="form-control" name="siganlemen_kelamin" id="siganelemenkelamin">
                 </div>
               </div>
             </form>
@@ -103,33 +103,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="#">Detail</a> | <a href="#">Cetak</a></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="#">Detail</a> | <a href="#">Cetak</a></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="#">Detail</a> | <a href="#">Cetak</a></td>
-              </tr>
+            <?php  
+            foreach ($h->result() as $row)  
+            {  
+              ?><tr>
+                  <td><?php echo $row->waktu;?></td>
+                  <td><?php echo $row->no_registrasi;?></td>
+                  <td><?php echo $row->no_rm;?></td>
+                  <td><?php echo $row->username;?></td>
+                  <td><?php echo $row->nama_hewan;?></td>
+                  <td><?php echo $row->diagnosis;?></td>
+                  <td><a href="#">Detail</a> | <a href="#">Cetak</a></td>
+                </tr>
+              <?php }  
+            ?>
             </tbody>
           </table>
         </div>

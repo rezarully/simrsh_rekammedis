@@ -23,10 +23,10 @@
         <!-- SIDEBAR -->
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="<?php echo base_url();?>index.php/antrian">Daftar Antrian</a></li>
-            <li><a href="<?php echo base_url();?>index.php/tindakan">Input Rekam Medis</a></li>
-            <li><a href="<?php echo base_url();?>index.php/riwayat">Daftar Rekam Medis</a></li>
-            <li><a href="<?php echo base_url();?>index.php/daftarinap">Daftar Inap</a></li>
-            <li><a href="<?php echo base_url();?>index.php/laporan">Laporan</a></li>
+            <li class="active"><a href="<?php echo base_url();?>index.php/rekammedis/index">Daftar Antrian</a></li>
+            <li><a href="<?php echo base_url();?>index.php/rekammedis/input_rm">Input Rekam Medis</a></li>
+            <li><a href="<?php echo base_url();?>index.php/rekammedis/daftar_rm">Daftar Rekam Medis</a></li>
+            <li><a href="<?php echo base_url();?>index.php/rekammedis/daftar_inap">Daftar Inap</a></li>
+            <li><a href="<?php echo base_url();?>index.php/rekammedis/laporan">Laporan</a></li>
           </ul>
         </div>

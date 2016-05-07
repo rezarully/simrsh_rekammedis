@@ -126,4 +126,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('mod_tindakan', 'mod_tindakaninap');
+$autoload['model'] = array('rekammedis_model');

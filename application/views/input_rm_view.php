@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Tindakan Pasien</title>
+    <title>Input Rekam Medis</title>
 
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/dashboard.css"); ?>">
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li role="presentation"><a data-toggle="tab" href="#obatobatan">Obat-obatan</a></li>
             <li role="presentation"><a data-toggle="tab" href="#tindakan">Tindakan</a></li>
           </ul>
-            <form action="<?php echo base_url("index.php/tindakan/savedata");?>" method="POST">
+            <form action="<?php echo base_url("index.php/rekammedis/save_data_input_rm");?>" method="POST">
             <div class="tab-content">
               <!-- TAB BAG. DATA PASIEN -->
               <?php $this->load->view('tabdatapasien_view'); ?>

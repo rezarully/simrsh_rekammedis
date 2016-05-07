@@ -4,13 +4,9 @@
                   <div class="tbodyClone4 col-md-12">
                     <div class="clonedInput4 form-horizontal">
                       <div class="form-group">
-                        <label for="tind" class="col-md-2">Tindakan</label>
-                        <div class="col-md-2">
-                          <select name="id_tindakan" id="tind" class="form-control">
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                          </select> 
+                        <label class="control-label col-sm-1">Tindakan</label>
+                        <div class="col-sm-6">
+                          <?php echo form_dropdown('nama_tindakan', $data, '', 'class="form-control"');?>
                         </div>
                       </div>
                       <div class="form-group">

@@ -10,7 +10,7 @@
 
     <div class="modal-body">
       <!-- BAG. ATAS -->
-      <form action="<?php echo base_url("index.php/tindakan/savedatainap");?>" method="POST">
+      <form action="<?php echo base_url("index.php/rekammedis/save_data_daftar_inap");?>" method="POST">
         <div class="col-md-12">
           <div class="col-md-4">
             <div class="form-horizontal">

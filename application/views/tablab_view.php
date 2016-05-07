@@ -4,22 +4,11 @@
                   <div class="tbodyClone1 col-md-12">
                     <div class="clonedInput1 form-horizontal">
                       <div class="form-group">
-                        <label for="pemlab" class="col-md-2">Pemeriksaan Laboratorium</label>
-                        <div class="col-md-2">
-                          <select name="id_lab" id="pemlab" class="form-control">
-                            <option value='feses'>Feses</option>
-                            <option value='urin'>Urin</option>
-                            <option value='hematologi'>Hematologi</option>
-                            <option value='usg'>USG</option>
-                            <option value='rontgen'>Rontgen</option>
-                            <option value='ekg'>EKG</option>
-                            <option value='faalorgan'>Faal Organ</option>
-                            <option value='kulit'>Kulit</option>
-                            <option value='alergi'>Alergi</option>
-                            <option value='lain'>Lain-lain</option>
-                          </select> 
+                        <label class="control-label col-sm-1">Pemeriksaan Laboratorium</label>
+                        <div class="col-sm-6">
+                          <?php echo form_dropdown('nama_pemeriksaan', $data, '', 'class="form-control"');?>
                         </div>
-                      </div>
+                      </div>                      
                       <!-- HIDDEN FESES -->
                       <!-- <div id="konsis" class="form-group">       
                         <label for="konsislabel" class="col-md-2">Konsistensi</label>

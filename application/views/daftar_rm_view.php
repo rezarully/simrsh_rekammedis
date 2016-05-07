@@ -11,8 +11,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/dashboard.css"); ?>">
+    <link rel="stylesheet" href="<?php echo base_url();?>style/css/dataTables.bootstrap.min.css">  
+    <link rel="stylesheet" href="<?php echo base_url();?>style/css/responsive.bootstrap.min.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url("style/js/bootstrap.min.js"); ?>"></script>
+    <script src="<?php echo base_url();?>style/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url();?>style/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>style/js/dataTables.responsive.min.js"></script>
 
   </head>
 
@@ -88,38 +94,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- RIWAYAT PASIEN BAG. TABEL -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <hr>
-      <br>
-        <div class="table-responsive">
-          <table class="table table-bordered" style="width:100%">
-            <thead>
-              <tr>
-                  <th>Waktu</th>
-                  <th>No. Registrasi</th>
-                  <th>No. Rekam Medis</th>
-                  <th>Dokter</th>
-                  <th>Nama Hewan</th>
-                  <th>Diagnosa</th>
-                  <th>Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php  
-            foreach ($h->result() as $row)  
-            {  
-              ?><tr>
-                  <td><?php echo $row->waktu;?></td>
-                  <td><?php echo $row->no_registrasi;?></td>
-                  <td><?php echo $row->no_rm;?></td>
-                  <td><?php echo $row->username;?></td>
-                  <td><?php echo $row->nama_hewan;?></td>
-                  <td><?php echo $row->diagnosis;?></td>
-                  <td><a href="#">Detail</a> | <a href="#">Cetak</a></td>
-                </tr>
-              <?php }  
+        <table id="tabel-pas" class="table table-striped table-bordered dt-responsive wrap" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Waktu</th>
+              <th>No. Registrasi</th>
+              <th>No. Rekam Medis</th>
+              <th>Nama Dokter</th>
+              <th>Nama Hewan</th>                   
+              <th>Diagnosis</th>                      
+              <th>Aksi</th>           
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              $no = 1;
+              foreach($daftar_rm_aktif as $row){
+              echo "<tr>";
+              echo '<td>'.$waktu.'</td>';
+              echo "<td>".$row->no_registrasi."</td>";     
+              echo "<td>".$row->no_rm."</td>";
+              echo "<td>".$row->username."</td>";
+              echo "<td>".$row->nama_hewan."</td>";
+              echo "<td>".$row->diagnosis."</td>";
+              echo '<td>'; if ( $row->status == 0) {
+
+                echo '<a href="#">Detail</a> | <a href="#">Cetak</a>';
+              }
+                else {
+                  echo 'Closed';
+                } echo'</td>';
+              echo"</tr>";$no++;
+              }            
             ?>
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+
+        <script> 
+          //datatable untuk tabel odp     
+          $(document).ready(function(){
+              $('#tabel-pas').DataTable({
+              "pagingType": "numbers"
+              });
+              $('[data-toggle="tooltip"]').tooltip();
+          }); 
+        </script>
     </div>
   </body>
 </html>

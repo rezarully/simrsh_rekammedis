@@ -42,13 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <!-- TAB BAG. ANAMNESIS -->
               <?php $this->load->view('tabanamnesis_view'); ?>
               <!-- TAB BAG. LAB -->
-              <?php $this->load->view('tablab_view'); ?>
+              <?php $data['data'] = $this->rekammedis_model->get_data_dropdownlab(); $this->load->view('tablab_view', $data); ?>
               <!-- TAB BAG. DIAGNOSIS -->
               <?php $this->load->view('tabdiagnosis_view'); ?>
               <!-- TAB BAG. OBAT -->
-              <?php $this->load->view('tabobat_view'); ?>
+              <?php $data['data'] = $this->rekammedis_model->get_data_dropdownobat(); $this->load->view('tabobat_view', $data); ?>
               <!-- TAB BAG. TINDAKAN -->
-              <?php $this->load->view('tabtindakan_view'); ?>
+              <?php $data['data'] = $this->rekammedis_model->get_data_dropdowntindakan(); $this->load->view('tabtindakan_view', $data); ?>
             </div>
 
             </form>     

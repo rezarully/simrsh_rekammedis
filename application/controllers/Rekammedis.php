@@ -23,18 +23,6 @@ class Rekammedis extends CI_Controller {
 		$this->load->view('input_rm_view');
 	}
 
-	function dropdownlab()
-    {
-        $data['data'] = $this->rekammedis_model->get_data_dropdownlab();
-        $this->load->view('input_rm_view', $data);
-    }
-
-    function dropdowntindakan()
-    {
-        $data['data'] = $this->rekammedis_model->get_data_dropdowntindakan();
-        $this->load->view('tabtindakan_view', $data);
-    }
-
 	function save_data_input_rm()
 	{
 		$insert = array();
@@ -65,16 +53,16 @@ class Rekammedis extends CI_Controller {
 		$insert['anggota_gerak'] 		= $_POST['anggota_gerak'];
 		$insert['berat_badan'] 			= $_POST['berat_badan'];
 		$insert['lain_anamnesis'] 		= $_POST['lain_anamnesis'];
-		$insert['id_lab'] 				= $_POST['id_lab'];
+		$insert['nama_pemeriksaan'] 	= $_POST['nama_pemeriksaan'];
 		$insert['ket_lab'] 				= $_POST['ket_lab'];
 		$insert['diagnosis'] 			= $_POST['diagnosis'];
 		$insert['prognosis'] 			= $_POST['prognosis'];
-		$insert['id_obat'] 				= $_POST['id_obat'];
+		$insert['nama_obat'] 			= $_POST['nama_obat'];
 		$insert['bentuk_sediaan'] 		= $_POST['bentuk_sediaan'];
 		$insert['jumlah_obat'] 			= $_POST['jumlah_obat'];
 		$insert['dosis_obat'] 			= $_POST['dosis_obat'];
 		$insert['petunjuk_obat'] 		= $_POST['petunjuk_obat'];
-		$insert['id_tindakan'] 			= $_POST['id_tindakan'];
+		$insert['nama_tindakan'] 		= $_POST['nama_tindakan'];
 		$insert['qty_tindakan'] 		= $_POST['qty_tindakan'];
 		$insert['ket_tindakan'] 		= $_POST['ket_tindakan'];
   

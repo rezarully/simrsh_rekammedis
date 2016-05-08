@@ -5,12 +5,8 @@
                     <div class="clonedInput3 form-horizontal">
                       <div class="form-group">
                         <label for="obat" class="col-md-2">Obat</label>
-                        <div class="col-md-2">
-                          <select name="id_obat" id="obat" obat="chosen-select" multiple data-placeholder="Pilih Obat">
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                          </select>
+                        <div class="col-md-5">
+                          <?php echo form_dropdown('nama_obat', $data, '', 'multiple class="form-control chosen-select"');?>
                         </div>
                       </div>
                       <div class="form-group">

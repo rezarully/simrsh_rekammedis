@@ -4,9 +4,9 @@
                   <div class="tbodyClone1 col-md-12">
                     <div class="clonedInput1 form-horizontal">
                       <div class="form-group">
-                        <label class="control-label col-sm-1">Pemeriksaan Laboratorium</label>
-                        <div class="col-sm-6">
-                          <?php echo form_dropdown('nama_pemeriksaan', $data, '', 'class="form-control"');?>
+                        <label for="pemlab" class="col-md-2">Pemeriksaan Laboratorium</label>
+                        <div class="col-md-5">
+                          <?php echo form_dropdown('nama_pemeriksaan', $data, '', 'class="form-control chosen-select"');?>
                         </div>
                       </div>                      
                       <!-- HIDDEN FESES -->

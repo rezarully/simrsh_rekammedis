@@ -21,10 +21,24 @@ class Rekammedis_model extends CI_Model {
 		$query = $this->db->get('daftarlab')->result_array();
 		if( is_array($query) && count ($query) > 0 )
 		{
-			$data[''] = 'Pilih';
+			$data[''] = '';
 			foreach ($query as $row ) 
 			{
-				$data[$row['nama_pemeriksaan']] = $row['nama_pemeriksaan'];
+				$data[$row['id_lab']] = $row['nama_pemeriksaan'];
+			}
+		}
+		return $data;
+	}
+
+	function get_data_dropdownobat()
+	{
+		$data = array();
+		$query = $this->db->get('daftarobat')->result_array();
+		if( is_array($query) && count ($query) > 0 )
+		{
+			foreach ($query as $row ) 
+			{
+				$data[$row['id_obat']] = $row['nama_obat'];
 			}
 		}
 		return $data;
@@ -36,10 +50,10 @@ class Rekammedis_model extends CI_Model {
 		$query = $this->db->get('daftartindakan')->result_array();
 		if( is_array($query) && count ($query) > 0 )
 		{
-			$data[''] = 'Pilih';
+			$data[''] = '';
 			foreach ($query as $row ) 
 			{
-				$data[$row['nama_tindakan']] = $row['nama_tindakan'];
+				$data[$row['id_tindakan']] = $row['nama_tindakan'];
 			}
 		}
 		return $data;
@@ -74,16 +88,16 @@ class Rekammedis_model extends CI_Model {
 		    'anggota_gerak' 		=> $insert['anggota_gerak'],
 		    'berat_badan' 			=> $insert['berat_badan'],
 		    'lain_anamnesis' 		=> $insert['lain_anamnesis'],
-		    'id_lab' 				=> $insert['id_lab'],
+		    'nama_pemeriksaan' 		=> $insert['nama_pemeriksaan'],
 		    'ket_lab' 				=> $insert['ket_lab'],
 		    'diagnosis' 			=> $insert['diagnosis'],
 		    'prognosis' 			=> $insert['prognosis'],
-		    'id_obat' 				=> $insert['id_obat'],
+		    'nama_obat' 			=> $insert['nama_obat'],
 		    'bentuk_sediaan' 		=> $insert['bentuk_sediaan'],
 		    'jumlah_obat' 			=> $insert['jumlah_obat'],
 		    'dosis_obat' 			=> $insert['dosis_obat'],
 		    'petunjuk_obat' 		=> $insert['petunjuk_obat'],
-		    'id_tindakan' 			=> $insert['id_tindakan'],
+		    'nama_tindakan' 		=> $insert['nama_tindakan'],
 		    'qty_tindakan' 			=> $insert['qty_tindakan'],
 		    'ket_tindakan' 			=> $insert['ket_tindakan']
 		);
@@ -140,6 +154,23 @@ class Rekammedis_model extends CI_Model {
         $query = $this->db->insert('inputrminap', $data);
 
     }
+
+    function clone_lab()
+    {
+    	//connect ke database
+		mysql_connect("localhost","root","");
+		mysql_select_db("db_anime");
+		  
+		//menankap data inputan field dari form
+		$data = $_POST['data'];
+		  
+		//perulangan untuk mengekstrak array dari lemparan isi field form
+		foreach($data as $row){
+		//menyimpan data ke dalam tablel tbl_karakter
+		mysql_query('INSERT INTO tbl_karakter (nama_char) VALUES ("'.$row.'") ');
+ 		}
+ 	}
+ 
 
 }
 

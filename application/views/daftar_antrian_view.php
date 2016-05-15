@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <th>No. Registrasi</th>
               <th>No. Rekam Medis</th>
               <th>Nama Pemilik</th>
-              <th>Nama Pasien</th>                                         
+              <th>Nama Hewan</th>                                         
               <th>Aksi</th>           
             </tr>
           </thead>
@@ -45,19 +45,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $no = 1;
               foreach($datapas_aktif as $row){
               echo "<tr>";
-              echo '<td>'.$waktu.'</td>';
+              echo '<td>'.$row->waktu.'</td>';
               echo "<td>".$row->no_registrasi."</td>";     
               echo "<td>".$row->no_rm."</td>";
               echo "<td>".$row->nama_pemilik."</td>";
-              echo "<td>".$row->nama_pasien."</td>";
-              echo '<td>'; if ( $row->status == 0) {
+              echo "<td>".$row->nama_hewan."</td>";
+              echo '<td>';
 
-                echo '<a href="" class="btn btn-default">Tutup</a>';
-              }
-                else {
-                  echo 'Closed';
-                } echo'</td>';
-              echo"</tr>";$no++;
+                echo '<a href="linktoinputrm">Sedang Dalam Antrian</a>';
+              
+                echo'</td>';
+                echo"</tr>";$no++;
               }            
             ?>
           </tbody>

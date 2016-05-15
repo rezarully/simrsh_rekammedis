@@ -21,7 +21,6 @@ class Rekammedis_model extends CI_Model {
 		$query = $this->db->get('daftarlab')->result_array();
 		if( is_array($query) && count ($query) > 0 )
 		{
-			$data[''] = '';
 			foreach ($query as $row ) 
 			{
 				$data[$row['id_lab']] = $row['nama_pemeriksaan'];
@@ -50,7 +49,6 @@ class Rekammedis_model extends CI_Model {
 		$query = $this->db->get('daftartindakan')->result_array();
 		if( is_array($query) && count ($query) > 0 )
 		{
-			$data[''] = '';
 			foreach ($query as $row ) 
 			{
 				$data[$row['id_tindakan']] = $row['nama_tindakan'];
@@ -93,10 +91,10 @@ class Rekammedis_model extends CI_Model {
 		    'diagnosis' 			=> $insert['diagnosis'],
 		    'prognosis' 			=> $insert['prognosis'],
 		    'nama_obat' 			=> $insert['nama_obat'],
-		    'bentuk_sediaan' 		=> $insert['bentuk_sediaan'],
-		    'jumlah_obat' 			=> $insert['jumlah_obat'],
-		    'dosis_obat' 			=> $insert['dosis_obat'],
-		    'petunjuk_obat' 		=> $insert['petunjuk_obat'],
+		    'jumlah_resep' 			=> $insert['jumlah_resep'],
+		    'satuan_resep' 			=> $insert['satuan_resep'],
+		    'perintah_pembuatan' 	=> $insert['perintah_pembuatan'],
+		    'petunjuk_penggunaan' 	=> $insert['petunjuk_penggunaan'],
 		    'nama_tindakan' 		=> $insert['nama_tindakan'],
 		    'qty_tindakan' 			=> $insert['qty_tindakan'],
 		    'ket_tindakan' 			=> $insert['ket_tindakan']
@@ -139,14 +137,19 @@ class Rekammedis_model extends CI_Model {
 		    'no_rm' 				=> $insert['no_rm'],
 		    'nama_pemilik' 			=> $insert['nama_pemilik'],
 		    'nama_hewan' 			=> $insert['nama_hewan'],
-		    'diagnosa' 				=> $insert['diagnosa'],
+		    'diagnosis' 			=> $insert['diagnosis'],
 		    'signalemen_ttl' 		=> $insert['signalemen_ttl'],
 		    'signalemen_kelamin' 	=> $insert['signalemen_kelamin'],
 		    'berat_badan' 			=> $insert['berat_badan'],
 		    'username' 				=> $insert['username'],
 		    'nama_mahasiswa' 		=> $insert['nama_mahasiswa'],
 		    'semester_mahasiswa' 	=> $insert['semester_mahasiswa'],
-		    'rencana_pengobatan' 	=> $insert['rencana_pengobatan'],
+		    'nama_obat' 			=> $insert['nama_obat'],
+		    'jumlah_resep' 			=> $insert['jumlah_resep'],
+		    'satuan_resep' 			=> $insert['satuan_resep'],
+		    'perintah_pembuatan' 	=> $insert['perintah_pembuatan'],
+		    'petunjuk_penggunaan' 	=> $insert['petunjuk_penggunaan'],
+		    'pssm' 					=> $insert['pssm'],
 		    'pengobatan' 			=> $insert['pengobatan'],
 		    'ket_pengobatan' 		=> $insert['ket_pengobatan']
 		);
@@ -155,7 +158,7 @@ class Rekammedis_model extends CI_Model {
 
     }
 
-    function clone_lab()
+    /*function clone_lab()
     {
     	//connect ke database
 		mysql_connect("localhost","root","");
@@ -170,7 +173,7 @@ class Rekammedis_model extends CI_Model {
 		mysql_query('INSERT INTO tbl_karakter (nama_char) VALUES ("'.$row.'") ');
  		}
  	}
- 
+*/ 
 
 }
 

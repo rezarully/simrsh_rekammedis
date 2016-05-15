@@ -73,8 +73,8 @@
                         </div>
                       </div>
                       <br>
-                        <button type="submit" class="buttonlab btn btn-primary">Tambah Pemeriksaan Laboratorium</button>
-                        <button type="submit" class="buttonlabbatal btn btn-primary">Batalkan</button>
+                        <button type="button" class="buttonlab btn btn-primary">Tambah Pemeriksaan Laboratorium</button>
+                        <button type="reset" class="buttonlabbatal btn btn-primary">Batalkan</button>
                         <br>
                         <br>
                     </div>

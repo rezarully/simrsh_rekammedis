@@ -17,21 +17,21 @@
                       </div>
                       <div class="form-group">
                         <label for="frekuensinafas" class="col-md-2">Frekuensi Nafas</label>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                           <input type="number" class="form-control" name="frek_nafas">
                         </div>
                         <h5>/mnt</h5>
                       </div>
                       <div class="form-group">
                         <label for="frekuensipulsus" class="col-md-2">Frekuensi Pulsus</label>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                           <input type="number" class="form-control" name="frek_pulsus">
                         </div>
                         <h5>/mnt</h5>
                       </div>
                       <div class="form-group">
                         <label for="temperaturtubuh" class="col-md-2">Temperatur Tubuh</label>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                           <input type="number" class="form-control" name="temperatur_tubuh">
                         </div>
                         <h5>'C</h5>

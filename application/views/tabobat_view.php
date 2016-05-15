@@ -1,42 +1,45 @@
               <div id="obatobatan" class="tab-pane fade">
                 <br>
-                <br>
                   <div class="tbodyClone3 col-md-12">
                     <div class="clonedInput3 form-horizontal">
                       <div class="form-group">
-                        <label for="obat" class="col-md-2">Obat</label>
+                        <div class="col-md-7">
+                          <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>R/</td>
+                                    <td>Jumlah</td>
+                                    <td>Satuan</td>
+                                </tr>
+                            </thead>
+                            <tbody class="tbodyClone3a">
+                                <tr id="clonedInput3a" class="clonedInput3a">
+                                    <td><?php echo form_dropdown('nama_obat', $data, '', 'class="form-control chosen-select"');?></td>
+                                    <td><input name="jumlah_resep" class="form-control" value="" /></td>
+                                    <td><input name="satuan_resep" class="form-control" value="" /></td>
+                                    <td><button name="buttonresep" type="button" class="clone btn btn-primary"><i class="fa fa-plus-circle">+</i></button></td>
+                                    <td><button name="buttonbatalresep" type="button" class="remove btn btn-primary"><i class="fa fa-circles"></i>-</button></td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="perintahpembuatan" class="perpem col-md-2">Perintah Pembuatan</label>
                         <div class="col-md-5">
-                          <?php echo form_dropdown('nama_obat', $data, '', 'multiple class="form-control chosen-select"');?>
+                          <textarea class="form-control" name="perintah_pembuatan" rows="4"></textarea>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="bentuk sediaan" class="bensed col-md-2">Bentuk Sediaan</label>
+                        <label for="petunjukpenggunaan" class="petpeng col-md-2">Petunjuk Penggunaan</label>
                         <div class="col-md-5">
-                          <textarea class="form-control" name="bentuk_sediaan" rows="4"></textarea>
+                          <textarea class="form-control" name="petunjuk_penggunaan" rows="4"></textarea>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="jumlah" class="jum col-md-2">Jumlah</label>
-                        <div class="col-md-2">
-                          <input type="text" class="form-control" name="jumlah_obat">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="dosisobat" class="dosobat col-md-2">Dosis</label>
-                        <div class="col-md-2">
-                          <input type="text" class="form-control" name="dosis_obat">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="petunjukobat" class="petobat col-md-2">Petunjuk</label>
-                        <div class="col-md-5">
-                          <textarea class="form-control" name="petunjuk_obat" rows="4"></textarea>
-                        </div>
-                      </div>
-                        <button type="submit" class="buttonobat btn btn-primary">Tambah Obat</button>
-                        <button type="submit" class="buttonobatbatal btn btn-primary">Batalkan</button>
-                        <br>
-                        <br>
+                      <button type="button" class="buttonobat btn btn-primary">Tambah Obat</button>
+                      <button type="reset" class="buttonobatbatal btn btn-primary">Batalkan</button>
+                      <br>
+                      <br>
                     </div>
                   </div>
                   <!-- TOMBOL

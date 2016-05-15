@@ -46,19 +46,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $no = 1;
               foreach($daftar_inap_aktif as $row){
               echo "<tr>";
-              echo '<td>'.$waktu.'</td>';
+              echo '<td>'.$row->waktu.'</td>';
               echo "<td>".$row->no_registrasi."</td>";     
               echo "<td>".$row->no_rm."</td>";
               echo "<td>".$row->username."</td>";
               echo "<td>".$row->nama_pemilik."</td>";
               echo "<td>".$row->nama_hewan."</td>";
-              echo '<td>'; if ( $row->status == 0) {
+              echo '<td>'; 
 
-                echo '<a data-target="#forminap" data-toggle="modal">Tambah</a> | <a href="#">Selesai</a>';
-              }
-                else {
-                  echo 'Closed';
-                } echo'</td>';
+                echo '<a href="linktoforminap">Tambah</a> | <a href="#">Selesai</a>';
+              
+              
+              echo'</td>';
               echo"</tr>";$no++;
               }            
             ?>
@@ -72,32 +71,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               });
               $('[data-toggle="tooltip"]').tooltip();
           }); 
-        </script>
-        
-        <!--Formulir Inap -->
-        <div class="modal modal-wide fade" id="forminap">
-          <?php $this->load->view('forminap'); ?>
-        </div>
-        <style>
-          .modal.modal-wide .modal-dialog 
-            {
-              width: 90%;
-            }
-          .modal-wide .modal-body 
-            {
-              overflow-y: auto;
-            }
-          .modal-title
-            {
-              text-align: center;
-            }
-        </style>
-
-        <script>
-          $(".modal-wide").on("show.bs.modal", function() {
-          var height = $(window).height() - 200;
-          $(this).find(".modal-body").css("max-height", height);
-          });
         </script>
 
     </div>

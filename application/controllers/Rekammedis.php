@@ -18,10 +18,47 @@ class Rekammedis extends CI_Controller {
 		$this->load->view('daftar_antrian_view', $data);
 	}
 
+	function linktoinputrm()
+	{
+		$this->load->view('input_rm_view');
+	}
+
 	function input_rm()
 	{
 		$this->load->view('input_rm_view');
 	}
+
+	/*function linktotabeldaftarinap()
+	{
+      	if(isset(POST['checkboxinap']))
+		{
+		    mysql_query("insert into db_table set first_name='".$POST['fname']."',middle_name='".$POST['mname']."',last_name='".$POST['lname']."'");
+		    $result = mysql_query("SELECT * FROM $db_table"); //table
+
+		    echo "<table cellpadding='0' cellspacing='0'>
+		    <tr>
+		    <th>First Name</th>
+		    <th>Middle Name</th>
+		     <th>Last Name</th>
+		    </tr>";
+
+		    while($row = mysql_fetch_array($result))
+		    {
+		    echo "<tr>";
+		    echo "<td>" . $row['first_name'] . "</td>";
+		    echo "<td>" . $row['middle_name'] . "</td>";
+		    echo "<td>" . $row['last_name'] . "</td>";
+		    echo "</tr>";
+		    }
+		    echo "</table>";
+		    mysql_close($con);
+		}
+
+		else
+		{
+			
+		}
+	}*/
 
 	function save_data_input_rm()
 	{
@@ -58,10 +95,10 @@ class Rekammedis extends CI_Controller {
 		$insert['diagnosis'] 			= $_POST['diagnosis'];
 		$insert['prognosis'] 			= $_POST['prognosis'];
 		$insert['nama_obat'] 			= $_POST['nama_obat'];
-		$insert['bentuk_sediaan'] 		= $_POST['bentuk_sediaan'];
-		$insert['jumlah_obat'] 			= $_POST['jumlah_obat'];
-		$insert['dosis_obat'] 			= $_POST['dosis_obat'];
-		$insert['petunjuk_obat'] 		= $_POST['petunjuk_obat'];
+		$insert['jumlah_resep'] 		= $_POST['jumlah_resep'];
+		$insert['satuan_resep'] 		= $_POST['satuan_resep'];
+		$insert['perintah_pembuatan'] 	= $_POST['perintah_pembuatan'];
+		$insert['petunjuk_penggunaan'] 	= $_POST['petunjuk_penggunaan'];
 		$insert['nama_tindakan'] 		= $_POST['nama_tindakan'];
 		$insert['qty_tindakan'] 		= $_POST['qty_tindakan'];
 		$insert['ket_tindakan'] 		= $_POST['ket_tindakan'];
@@ -105,21 +142,31 @@ class Rekammedis extends CI_Controller {
 		$insert['no_rm'] 				= $_POST['no_rm'];
 		$insert['nama_pemilik'] 		= $_POST['nama_pemilik'];
 		$insert['nama_hewan'] 			= $_POST['nama_hewan'];
-		$insert['diagnosa'] 			= $_POST['diagnosa'];
+		$insert['diagnosis'] 			= $_POST['diagnosis'];
 		$insert['signalemen_ttl'] 		= $_POST['signalemen_ttl'];
 		$insert['signalemen_kelamin'] 	= $_POST['signalemen_kelamin'];
 		$insert['berat_badan'] 			= $_POST['berat_badan'];
 		$insert['username'] 			= $_POST['username'];
 		$insert['nama_mahasiswa'] 		= $_POST['nama_mahasiswa'];
 		$insert['semester_mahasiswa']	= $_POST['semester_mahasiswa'];
-		$insert['rencana_pengobatan'] 	= $_POST['rencana_pengobatan'];
+		$insert['nama_obat'] 			= $_POST['nama_obat'];
+		$insert['jumlah_resep'] 		= $_POST['jumlah_resep'];
+		$insert['satuan_resep'] 		= $_POST['satuan_resep'];
+		$insert['perintah_pembuatan'] 	= $_POST['perintah_pembuatan'];
+		$insert['petunjuk_penggunaan'] 	= $_POST['petunjuk_penggunaan'];
+		$insert['pssm'] 				= $_POST['pssm'];
 		$insert['pengobatan'] 			= $_POST['pengobatan'];
 		$insert['ket_pengobatan'] 		= $_POST['ket_pengobatan'];
-		
+
   
 		$this->rekammedis_model->insert_users_inap($insert);
 		 
 		redirect('rekammedis/daftar_inap');
+	}
+
+	function linktoforminap()
+	{
+		$this->load->view('forminap');
 	}
 
 	function laporan()

@@ -15,8 +15,8 @@
                           <textarea name="prognosis" id="prognosis" class="form-control" rows="4"></textarea>
                         </div>
                       </div>
-                      <button type="submit" class="buttondiagnosis btn btn-primary">Tambah Diagnosis</button>
-                      <button type="submit" class="buttondiagnosisbatal btn btn-primary">Batalkan</button>
+                      <button type="button" class="buttondiagnosis btn btn-primary">Tambah Diagnosis</button>
+                      <button type="reset" class="buttondiagnosisbatal btn btn-primary">Batalkan</button>
                         <br>
                         <br>
                     </div>

@@ -50,7 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <!-- TAB BAG. TINDAKAN -->
               <?php $data['data'] = $this->rekammedis_model->get_data_dropdowntindakan(); $this->load->view('tabtindakan_view', $data); ?>
             </div>
-
             </form>     
             <!-- JS UNTUK TAB --> 
             <script>
@@ -230,6 +229,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $(document).on("click", ".buttondiagnosisbatal", remove);
             </script>
 
+            <!-- JS CLONE FORM BAG. RESEP -->
+            <script>
+            var regex = /^(.*)(\d)+$/i;
+            var cloneIndex = $(".clonedInput3a").length;
+            if ($(".clonedInput3a").length == 1) {
+                $('.remove').hide();
+            } else {
+                $('.remove').show();
+            }
+
+            function clone() {
+                $(this).parents(".clonedInput3a").clone()
+                    .appendTo(".tbodyClone3a")
+                    .attr("id", "clonedInput3a" + cloneIndex)
+                    .find("input")
+                    .val("")
+                    .each(function () {
+                        var id = this.id || "";
+                        var match = id.match(regex) || [];
+                        if (match.length == 3) {
+                            this.id = match[1] + (cloneIndex);
+                        }
+                    })
+                    .on('click', 'clone', clone)
+                    .on('click', 'remove', remove);
+
+                cloneIndex++;
+
+                //se tem só uma linha esconde o delete
+                console.log("Total de linhas => " + $(".clonedInput3a").length);
+              
+                if ($(".clonedInput3a").length == 1) {
+                    $('.remove').hide();
+                } else {
+                    $('.remove').show();
+                }
+
+            }
+            function remove() {        
+                $(this).parents(".clonedInput3a").remove();
+
+                if ($(".clonedInput3a").length == 1) {
+                    $('.remove').hide();
+                } else {
+                    $('.remove').show();
+                }
+
+            }    
+            $(document).on("click", ".clone", clone);
+            $(document).on("click", ".remove", remove);
+            </script>            
+
             <!-- JS CLONE FORM BAG. OBAT -->
             <script>
             var regex = /^(.*)(\d)+$/i;
@@ -335,9 +386,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </script>
 
             <script type="text/javascript">
-                $(".chosen-select").chosen({
-                width: "410px",
-                enable_search_threshold: 10
+                if($(this).hasClass('chosen-select'))
+                {
+                    $(".chosen-select").chosen({
+                        width: "410px",
+                        enable_search_threshold: 10
+                }
+
+            })
+            </script>
+
+            <script type="text/javascript">
+                if($(this).hasClass('multiple-select'))
+                {
+                    $(".chosen-select").chosen({
+                        width: "410px",
+                        enable_search_threshold: 10
+                }
+
             })
             </script>
 

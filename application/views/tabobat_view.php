@@ -6,7 +6,7 @@
                       <div class="form-group">
                         <label for="obat" class="col-md-2">Obat</label>
                         <div class="col-md-5">
-                          <?php echo form_dropdown('nama_obat', $data, '', 'multiple class="form-control chosen-select"');?>
+                          <?php echo form_dropdown('nama_obat[]', $data, '', 'multiple class="form-control chosen-select"');?>
                         </div>
                       </div>
                       <div class="form-group">

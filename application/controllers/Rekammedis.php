@@ -25,50 +25,79 @@ class Rekammedis extends CI_Controller {
 
 	function save_data_input_rm()
 	{
-		$insert = array();
-		$insert['waktu'] 				= $_POST['waktu'];
-		$insert['no_registrasi'] 		= $_POST['no_registrasi'];
-		$insert['no_rm'] 				= $_POST['no_rm'];
-		$insert['nama_pemilik'] 		= $_POST['nama_pemilik'];
-		$insert['nama_hewan'] 			= $_POST['nama_hewan'];
-		$insert['jenis_hewan'] 			= $_POST['jenis_hewan'];
-		$insert['signalemen_ttl'] 		= $_POST['signalemen_ttl'];
-		$insert['signalemen_kelamin'] 	= $_POST['signalemen_kelamin'];
-		$insert['username'] 			= $_POST['username'];
-		$insert['nama_tenagamedis'] 	= $_POST['nama_tenagamedis'];
-		$insert['nama_koas'] 			= $_POST['nama_koas'];
-		$insert['anamnesis']			= $_POST['anamnesis'];
-		$insert['keadaan_umum'] 		= $_POST['keadaan_umum'];
-		$insert['frek_nafas'] 			= $_POST['frek_nafas'];
-		$insert['frek_pulsus'] 			= $_POST['frek_pulsus'];
-		$insert['temperatur_tubuh'] 	= $_POST['temperatur_tubuh'];
-		$insert['kulit_rambut'] 		= $_POST['kulit_rambut'];
-		$insert['selaput_lendir'] 		= $_POST['selaput_lendir'];
-		$insert['kelenjar_limfe'] 		= $_POST['kelenjar_limfe'];
-		$insert['pernafasan'] 			= $_POST['pernafasan'];
-		$insert['peredaran_darah'] 		= $_POST['peredaran_darah'];
-		$insert['pencernaan'] 			= $_POST['pencernaan'];
-		$insert['kelamin_perkencingan'] = $_POST['kelamin_perkencingan'];
-		$insert['syaraf'] 				= $_POST['syaraf'];
-		$insert['anggota_gerak'] 		= $_POST['anggota_gerak'];
-		$insert['berat_badan'] 			= $_POST['berat_badan'];
-		$insert['lain_anamnesis'] 		= $_POST['lain_anamnesis'];
-		$insert['nama_pemeriksaan'] 	= $_POST['nama_pemeriksaan'];
-		$insert['ket_lab'] 				= $_POST['ket_lab'];
-		$insert['diagnosis'] 			= $_POST['diagnosis'];
-		$insert['prognosis'] 			= $_POST['prognosis'];
-		$insert['nama_obat'] 			= $_POST['nama_obat'];
-		$insert['bentuk_sediaan'] 		= $_POST['bentuk_sediaan'];
-		$insert['jumlah_obat'] 			= $_POST['jumlah_obat'];
-		$insert['dosis_obat'] 			= $_POST['dosis_obat'];
-		$insert['petunjuk_obat'] 		= $_POST['petunjuk_obat'];
-		$insert['nama_tindakan'] 		= $_POST['nama_tindakan'];
-		$insert['qty_tindakan'] 		= $_POST['qty_tindakan'];
-		$insert['ket_tindakan'] 		= $_POST['ket_tindakan'];
-  
-		$this->rekammedis_model->insert_users($insert);
-		 
-		redirect('rekammedis/input_rm');
+		$checked = $this->input->post('checkbox_inap');
+		if(!$checked){
+			$insert = array();
+			foreach($this->input->post('nama_obat') as $nama_obat){
+				echo $nama_obat;
+			}
+			$insert['waktu'] 				= $_POST['waktu'];
+			$insert['no_registrasi'] 		= $_POST['no_registrasi'];
+			$insert['no_rm'] 				= $_POST['no_rm'];
+			$insert['nama_pemilik'] 		= $_POST['nama_pemilik'];
+			$insert['nama_hewan'] 			= $_POST['nama_hewan'];
+			$insert['jenis_hewan'] 			= $_POST['jenis_hewan'];
+			$insert['signalemen_ttl'] 		= $_POST['signalemen_ttl'];
+			$insert['signalemen_kelamin'] 	= $_POST['signalemen_kelamin'];
+			$insert['username'] 			= $_POST['username'];
+			$insert['nama_tenagamedis'] 	= $_POST['nama_tenagamedis'];
+			$insert['nama_koas'] 			= $_POST['nama_koas'];
+			$insert['anamnesis']			= $_POST['anamnesis'];
+			$insert['keadaan_umum'] 		= $_POST['keadaan_umum'];
+			$insert['frek_nafas'] 			= $_POST['frek_nafas'];
+			$insert['frek_pulsus'] 			= $_POST['frek_pulsus'];
+			$insert['temperatur_tubuh'] 	= $_POST['temperatur_tubuh'];
+			$insert['kulit_rambut'] 		= $_POST['kulit_rambut'];
+			$insert['selaput_lendir'] 		= $_POST['selaput_lendir'];
+			$insert['kelenjar_limfe'] 		= $_POST['kelenjar_limfe'];
+			$insert['pernafasan'] 			= $_POST['pernafasan'];
+			$insert['peredaran_darah'] 		= $_POST['peredaran_darah'];
+			$insert['pencernaan'] 			= $_POST['pencernaan'];
+			$insert['kelamin_perkencingan'] = $_POST['kelamin_perkencingan'];
+			$insert['syaraf'] 				= $_POST['syaraf'];
+			$insert['anggota_gerak'] 		= $_POST['anggota_gerak'];
+			$insert['berat_badan'] 			= $_POST['berat_badan'];
+			$insert['lain_anamnesis'] 		= $_POST['lain_anamnesis'];
+			$insert['nama_pemeriksaan'] 	= $_POST['nama_pemeriksaan'];
+			$insert['ket_lab'] 				= $_POST['ket_lab'];
+			$insert['diagnosis'] 			= $_POST['diagnosis'];
+			$insert['prognosis'] 			= $_POST['prognosis'];
+			$insert['nama_obat'] 			= $nama_obat;
+			$insert['bentuk_sediaan'] 		= $_POST['bentuk_sediaan'];
+			$insert['jumlah_obat'] 			= $_POST['jumlah_obat'];
+			$insert['dosis_obat'] 			= $_POST['dosis_obat'];
+			$insert['petunjuk_obat'] 		= $_POST['petunjuk_obat'];
+			$insert['nama_tindakan'] 		= $_POST['nama_tindakan'];
+			$insert['qty_tindakan'] 		= $_POST['qty_tindakan'];
+			$insert['ket_tindakan'] 		= $_POST['ket_tindakan'];
+
+			$this->rekammedis_model->insert_users($insert);
+
+			redirect('rekammedis/input_rm');
+		} else {
+			$insert = array();
+			$insert['waktu'] 				= $_POST['waktu'];
+			$insert['no_registrasi'] 		= $_POST['no_registrasi'];
+			$insert['no_rm'] 				= $_POST['no_rm'];
+			$insert['nama_pemilik'] 		= $_POST['nama_pemilik'];
+			$insert['nama_hewan'] 			= $_POST['nama_hewan'];
+			$insert['diagnosa'] 			= $_POST['diagnosa'];
+			$insert['signalemen_ttl'] 		= $_POST['signalemen_ttl'];
+			$insert['signalemen_kelamin'] 	= $_POST['signalemen_kelamin'];
+			$insert['berat_badan'] 			= $_POST['berat_badan'];
+			$insert['username'] 			= $_POST['username'];
+			$insert['nama_mahasiswa'] 		= $_POST['nama_mahasiswa'];
+			$insert['semester_mahasiswa']	= $_POST['semester_mahasiswa'];
+			$insert['rencana_pengobatan'] 	= $_POST['rencana_pengobatan'];
+			$insert['pengobatan'] 			= $_POST['pengobatan'];
+			$insert['ket_pengobatan'] 		= $_POST['ket_pengobatan'];
+
+
+			$this->rekammedis_model->insert_users_inap($insert);
+
+			redirect('rekammedis/daftar_inap');
+		}
+
 	}
 
 	/*function daftar_rm()
@@ -126,6 +155,7 @@ class Rekammedis extends CI_Controller {
 	{
 		$this->load->view('laporan_view');
 	}
+
 
 }
 

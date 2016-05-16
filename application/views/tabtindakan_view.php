@@ -21,8 +21,8 @@
                           <textarea class="form-control" name="ket_tindakan" rows="4"></textarea>
                         </div>
                       </div>
-                      <button type="submit" class="buttontindakan btn btn-primary">Tambah Tindakan</button>
-                      <button type="submit" class="buttontindakanbatal btn btn-primary">Batalkan</button>
+                      <button type="button" class="buttontindakan btn btn-primary">Tambah Tindakan</button>
+                      <button type="button" class="buttontindakanbatal btn btn-primary">Batalkan</button>
                         <br>
                         <br>
                     </div>
@@ -32,7 +32,7 @@
                   <hr>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" onclick='window.location.assign("application/views/antrianinap_view")'> Tambahkan ke daftar rawat inap
+                        <input type="checkbox" name="checkbox_inap"> Tambahkan ke daftar rawat inap
                       </label>
                     </div>
                     <div class="form-actions pull-right">

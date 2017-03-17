@@ -7,11 +7,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Input Rekam Medis</title>
+    <title>SIM RSH Prof. Soeparwi | Input Rekam Medis</title>
 
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/dashboard.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap-chosen.css"); ?>">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url("style/js/bootstrap.min.js"); ?>"></script>
@@ -20,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <body>
 
-  <?php $this->load->view('menu_view'); ?>    
+  <?php $this->load->view('menu_view'); ?>
     <div class="container-fluid">
       <div class="row">
         <!-- TAB -->
@@ -38,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <form action="<?php echo base_url("index.php/rekammedis/save_data_input_rm");?>" method="POST">
             <div class="tab-content">
               <!-- TAB BAG. DATA PASIEN -->
-              <?php $this->load->view('tabdatapasien_view'); ?>
+              <?php $id_tabdatapasien = (int)$_GET['id']; $this->load->view('tabdatapasien_view'); ?>
               <!-- TAB BAG. ANAMNESIS -->
               <?php $this->load->view('tabanamnesis_view'); ?>
               <!-- TAB BAG. LAB -->
@@ -190,7 +191,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $(this).parents(".clonedInput2").clone()
                     .appendTo(".tbodyClone2")
                     .attr("id", "clonedInput2" + cloneIndex)
-                    .find("textarea")
+                    .find("input, textarea")
                     .val("")
                     .each(function () {
                         var id = this.id || "";
@@ -234,9 +235,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             var regex = /^(.*)(\d)+$/i;
             var cloneIndex = $(".clonedInput3a").length;
             if ($(".clonedInput3a").length == 1) {
-                $('.remove').hide();
+                $('.buttonbatalresep').hide();
             } else {
-                $('.remove').show();
+                $('.buttonbatalresep').show();
             }
 
             function clone() {
@@ -252,8 +253,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             this.id = match[1] + (cloneIndex);
                         }
                     })
-                    .on('click', 'clone', clone)
-                    .on('click', 'remove', remove);
+                    .on('click', 'buttonresep', clone)
+                    .on('click', 'buttonbatalresep', remove);
 
                 cloneIndex++;
 
@@ -261,9 +262,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 console.log("Total de linhas => " + $(".clonedInput3a").length);
               
                 if ($(".clonedInput3a").length == 1) {
-                    $('.remove').hide();
+                    $('.buttonbatalresep').hide();
                 } else {
-                    $('.remove').show();
+                    $('.buttonbatalresep').show();
                 }
 
             }
@@ -271,14 +272,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $(this).parents(".clonedInput3a").remove();
 
                 if ($(".clonedInput3a").length == 1) {
-                    $('.remove').hide();
+                    $('.buttonbatalresep').hide();
                 } else {
-                    $('.remove').show();
+                    $('.buttonbatalresep').show();
                 }
 
             }    
-            $(document).on("click", ".clone", clone);
-            $(document).on("click", ".remove", remove);
+            $(document).on("click", ".buttonresep", clone);
+            $(document).on("click", ".buttonbatalresep", remove);
             </script>            
 
             <!-- JS CLONE FORM BAG. OBAT -->
@@ -390,10 +391,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 {
                     $(".chosen-select").chosen({
                         width: "410px",
-                        enable_search_threshold: 10
+                        enable_search_threshold: 10,
+                        no_results_text: "Hasil tidak ditemukan!",
+                        allow_single_deselect: true
+                    })
                 }
-
-            })
             </script>
 
             <script type="text/javascript">
@@ -401,10 +403,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 {
                     $(".chosen-select").chosen({
                         width: "410px",
-                        enable_search_threshold: 10
+                        enable_search_threshold: 10,
+                        no_results_text: "Hasil tidak ditemukan!",
+                        allow_single_deselect: true
+                    })
                 }
-
-            })
             </script>
 
         </div>

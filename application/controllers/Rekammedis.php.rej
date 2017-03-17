@@ -1,0 +1,50 @@
+diff a/application/controllers/Rekammedis.php b/application/controllers/Rekammedis.php	(rejected hunks)
+@@ -18,11 +18,48 @@
+ 		$this->load->view('daftar_antrian_view', $data);
+ 	}
+ 
++	function linktoinputrm()
++	{
++		$this->load->view('input_rm_view');
++	}
++
+ 	function input_rm()
+ 	{
+ 		$this->load->view('input_rm_view');
+ 	}
+ 
++	/*function linktotabeldaftarinap()
++	{
++      	if(isset(POST['checkboxinap']))
++		{
++		    mysql_query("insert into db_table set first_name='".$POST['fname']."',middle_name='".$POST['mname']."',last_name='".$POST['lname']."'");
++		    $result = mysql_query("SELECT * FROM $db_table"); //table
++
++		    echo "<table cellpadding='0' cellspacing='0'>
++		    <tr>
++		    <th>First Name</th>
++		    <th>Middle Name</th>
++		     <th>Last Name</th>
++		    </tr>";
++
++		    while($row = mysql_fetch_array($result))
++		    {
++		    echo "<tr>";
++		    echo "<td>" . $row['first_name'] . "</td>";
++		    echo "<td>" . $row['middle_name'] . "</td>";
++		    echo "<td>" . $row['last_name'] . "</td>";
++		    echo "</tr>";
++		    }
++		    echo "</table>";
++		    mysql_close($con);
++		}
++
++		else
++		{
++			
++		}
++	}*/
++
+ 	function save_data_input_rm()
+ 	{
+ 		$insert = array();

@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Daftar Inap</title>
+    <title>SIM RSH Prof. Soeparwi | Daftar Inap</title>
 
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/dashboard.css"); ?>">
@@ -54,8 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               echo "<td>".$row->nama_hewan."</td>";
               echo '<td>'; 
 
-                echo '<a href="linktoforminap">Tambah</a> | <a href="#">Selesai</a>';
-              
+                echo '<a href="linktoforminap?id='.$row->id.'">Tambah</a> | <a href="akhiriinap?no_registrasi='.$row->no_registrasi.'" name="clickakhiri">Selesai</a>';
               
               echo'</td>';
               echo"</tr>";$no++;

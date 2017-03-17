@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Daftar Antrian</title>
+    <title>SIM RSH Prof. Soeparwi | Daftar Antrian</title>
 
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/dashboard.css"); ?>">
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <th>No. Rekam Medis</th>
               <th>Nama Pemilik</th>
               <th>Nama Hewan</th>                                         
-              <th>Aksi</th>           
+              <th>Status</th>           
             </tr>
           </thead>
           <tbody>
@@ -45,17 +45,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $no = 1;
               foreach($datapas_aktif as $row){
               echo "<tr>";
-              echo '<td>'.$row->waktu.'</td>';
+              echo "<td>".$row->waktu."</td>";
               echo "<td>".$row->no_registrasi."</td>";     
               echo "<td>".$row->no_rm."</td>";
               echo "<td>".$row->nama_pemilik."</td>";
               echo "<td>".$row->nama_hewan."</td>";
-              echo '<td>';
+              //echo "<td>".$row->status_antrian."</td>";
+              if ($row->status_antrian == '1')
+              {
+                echo '<td><a href="linktoinputrm?id='.$row->id.'">Dalam Antrian</a></td>';
+              }
+              else 
+              {
+                echo '<td>Selesai</td>';
+              }
 
-                echo '<a href="linktoinputrm">Sedang Dalam Antrian</a>';
-              
-                echo'</td>';
-                echo"</tr>";$no++;
+
+              echo"</tr>";$no++;
               }            
             ?>
           </tbody>

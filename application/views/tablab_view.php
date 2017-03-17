@@ -6,7 +6,7 @@
                       <div class="form-group">
                         <label for="pemlab" class="col-md-2">Pemeriksaan Laboratorium</label>
                         <div class="col-md-5">
-                          <?php echo form_dropdown('nama_pemeriksaan', $data, '', 'class="form-control chosen-select"');?>
+                          <?php echo form_dropdown('nama_pemeriksaan[]', $data, '', 'class="form-control chosen-select"');?>
                         </div>
                       </div>                      
                       <!-- HIDDEN FESES -->
@@ -69,7 +69,7 @@
                       <div class="form-group">
                         <label for="keteranganlab" class="col-md-2">Keterangan</label>
                         <div class="col-md-5">
-                          <textarea class="form-control" name="ket_lab" rows="4"></textarea>
+                          <textarea class="form-control" name="ket_lab[]" rows="4"></textarea>
                         </div>
                       </div>
                       <br>

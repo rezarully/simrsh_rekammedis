@@ -8,11 +8,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SIMRSH</a>
+          <a class="navbar-brand" href="#">SIMRSH Prof. Soeparwi</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Super Admin</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php $username = $this->session->userdata('username'); echo $username;?> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <!-- <li><a href="<?php echo base_url();?>index.php/rekammedis/ubahpassword">Ubah Password</a></li> -->
+                <li><a href="<?php echo base_url();?>index.php/rekammedis/logout">Log Out</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -24,7 +30,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="<?php echo base_url();?>index.php/rekammedis/index">Daftar Antrian</a></li>
-            <li><a href="<?php echo base_url();?>index.php/rekammedis/input_rm">Input Rekam Medis</a></li>
+            <!-- <li><a href="<?php echo base_url();?>index.php/rekammedis/input_rm">Input Rekam Medis</a></li> -->
             <li><a href="<?php echo base_url();?>index.php/rekammedis/daftar_rm">Daftar Rekam Medis</a></li>
             <li><a href="<?php echo base_url();?>index.php/rekammedis/daftar_inap">Daftar Inap</a></li>
             <li><a href="<?php echo base_url();?>index.php/rekammedis/laporan">Laporan</a></li>

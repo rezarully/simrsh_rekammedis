@@ -92,7 +92,7 @@
                       </div>
                       <div class="form-group">
                         <label for="beratbadan" class="col-md-2">Berat Badan</label>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                           <input type="number" class="form-control" name="berat_badan">
                         </div>
                         <h5>Gram</h5>

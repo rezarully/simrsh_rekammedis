@@ -8,20 +8,20 @@
                           <div class="col-md-12">
                             <table class="table">
                               <thead>
-                                  <tr>
-                                      <td>R/</td>
-                                      <td>Jumlah</td>
-                                      <td>Satuan</td>
-                                  </tr>
+                                <tr>
+                                  <td>R/</td>
+                                  <td>Jumlah</td>
+                                  <td>Satuan</td>
+                                </tr>
                               </thead>
                               <tbody class="tbodyClone5a">
-                                  <tr id="clonedInput5a" class="clonedInput5a">
-                                      <td><?php echo form_dropdown('nama_obat', $data, '', 'class="form-control chosen-select"');?></td>
-                                      <td><input name="jumlah_resep" class="form-control" value="" /></td>
-                                      <td><input name="satuan_resep" class="form-control" value="" /></td>
-                                      <td><button id="buttonresep" name="buttonresep" type="button" class="clone btn btn-primary"><i class="fa fa-plus-circle">+</i></button></td>
-                                      <td><button id="buttonbatalresep" name="buttonbatalresep" type="button" class="remove btn btn-primary"><i class="fa fa-circles"></i>-</button></td>
-                                  </tr>
+                                <tr id="clonedInput5a" class="clonedInput5a">
+                                  <td><?php echo form_dropdown('nama_obat', $data, '', 'class="form-control chosen-select"');?></td>
+                                  <td><input name="jumlah_resep" class="form-control" value="" /></td>
+                                  <td><input name="satuan_resep" class="form-control" value="" /></td>
+                                  <td><button id="buttonresep" name="buttonresep" type="button" class="clone btn btn-primary"><i class="fa fa-plus-circle">+</i></button></td>
+                                  <td><button id="buttonbatalresep" name="buttonbatalresep" type="button" class="remove btn btn-primary"><i class="fa fa-circles"></i>x</button></td>
+                                </tr>
                               </tbody>
                             </table>
                           </div>
@@ -45,8 +45,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-5">
-                    <!--Kesimpulan--> 
+                  <!-- <div class="col-md-5">
+                    -Kesimpulan-
                     <table class="table table-striped table-condensed">
                       <thead>
                         <tr>
@@ -116,7 +116,7 @@
                         ?>
                       </tbody>
                     </table>
-                  </div>
+                  </div> -->
               </div>
 
               

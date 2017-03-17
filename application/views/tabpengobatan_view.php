@@ -28,12 +28,12 @@
                       </div>
                       <div class="form-actions pull-right">
                         <button class="btn btn-primary" type="submit" name="submit" value="submit">Simpan</button>
-                        <button class="btn btn-default" type="reset">Batal</button>
+                        <a class="btn btn-default" type="reset" href="daftar_inap">Batal</a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-5">
-                    <!--Kesimpulan--> 
+                  <!-- <div class="col-md-5">
+                    -Kesimpulan-
                     <table class="table table-striped table-condensed">
                       <thead>
                         <tr>
@@ -103,7 +103,7 @@
                         ?>
                       </tbody>
                     </table>
-                  </div>
+                  </div> -->
               </div>
 
               

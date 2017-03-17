@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Form Inap</title>
+    <title>SIM RSH Prof. Soeparwi | Form Inap</title>
 
     <link rel="stylesheet" href="<?php echo base_url("style/css/bootstrap.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("style/css/dashboard.css"); ?>">
@@ -33,9 +33,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="col-md-6">
                 <div class="form-horizontal">
                   <?php 
-                        $query = $this->db->get_where('inputrm');
+                        $id_forminap = (int)$_GET['id']; 
+                        $query = $this->db->query("SELECT * FROM `inputrminap` WHERE  id = $id_forminap");
                         $data = $query->row();
-                        $waktu = $data->waktu;
                         $no_registrasi = $data->no_registrasi;
                         $no_rm = $data->no_rm;
                         $nama_pemilik = $data->nama_pemilik;
@@ -44,42 +44,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         $signalemen_ttl = $data->signalemen_ttl;
                         $signalemen_kelamin = $data->signalemen_kelamin;
                         $berat_badan = $data->berat_badan;
-                        $username = $data->username;
                       ?>
                   <div class="form-group">
                     <label class="col-md-4">Waktu</label>
                     <div class="col-md-5">
-                      <input type="date" name="waktu" class="form-control" value="<?php echo $waktu ?>">
+                      <input type="timestamp" name="waktu" class="form-control" value="<?php echo (new DateTime('now',new DateTimeZone('Asia/Jakarta')))->format('Y-m-d H:i:s'); ?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">No. Registrasi</label>
                     <div class="col-md-5">
-                      <input type="text" name="no_registrasi" class="form-control" value="<?php echo $no_registrasi ?>">
+                      <input type="text" name="no_registrasi" class="form-control" value="<?php echo $no_registrasi ?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">No. Rekam Medis</label>
                     <div class="col-md-5">
-                      <input type="text" name"no_rm" class="form-control" value="<?php echo $no_rm ?>">
+                      <input type="text" name="no_rm" class="form-control" value="<?php echo $no_rm ?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">Nama Pemilik</label>
                     <div class="col-md-5">
-                      <input type="text" name="nama_pemilik" class="form-control" value="<?php echo $nama_pemilik ?>">
+                      <input type="text" name="nama_pemilik" class="form-control" value="<?php echo $nama_pemilik ?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">Nama Hewan</label>
                     <div class="col-md-5">
-                      <input type="text" name="nama_hewan" class="form-control" value="<?php echo $nama_hewan ?>">
+                      <input type="text" name="nama_hewan" class="form-control" value="<?php echo $nama_hewan ?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">Diagnosis</label>
                     <div class="col-md-5">
-                      <input type="text" name="diagnosis" class="form-control" value="<?php echo $diagnosis ?>">
+                      <input type="text" name="diagnosis" class="form-control" value="<?php echo $diagnosis ?>" readonly>
                     </div>
                   </div>
                 </div>
@@ -89,23 +88,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="form-group">
                     <label class="col-md-4">Signalemen</label>
                     <div class="col-md-3">
-                      <input type="number" name="signalemen_ttl" class="form-control" value="<?php echo $signalemen_ttl ?>">
+                      <input type="number" name="signalemen_ttl" class="form-control" value="<?php echo $signalemen_ttl?>" readonly>
                     </div>              
                     <div class="col-md-2">
-                      <input type="text" name="signalemen_kelamin" class="form-control" value="<?php echo $signalemen_kelamin ?>">
+                      <input type="text" name="signalemen_kelamin" class="form-control" value="<?php echo $signalemen_kelamin ?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">Berat Badan</label>
                     <div class="col-md-3">
-                      <input type="number" name="berat_badan" class="form-control" value="<?php echo $berat_badan ?>">
+                      <input type="number" name="berat_badan" class="form-control" value="<?php echo $berat_badan ?>" readonly>
                     </div>
                     <h5>Gram</h5>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4">Nama Dokter</label>
                     <div class="col-md-5">
-                      <input type="text" name="username" class="form-control" value="<?php echo $username ?>">
+                      <input type="text" name="username" class="form-control" value="<?php $username = $this->session->userdata('username'); echo $username;?>" readonly>
                     </div>
                   </div>
                   <div class="form-group">

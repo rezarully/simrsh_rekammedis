@@ -84,11 +84,11 @@
                   '<div class="range_inputs">' +
                     '<div class="daterangepicker_start_input" style="float: left">' +
                       '<label for="daterangepicker_start">' + this.locale.fromLabel + '</label>' +
-                      '<input class="input-mini" type="text" name="daterangepicker_start" value="" disabled="disabled" />' +
+                      '<input class="input-mini" type="text" id="daterangepicker_start" name="daterangepicker_start" value="" disabled="disabled" />' +
                     '</div>' +
                     '<div class="daterangepicker_end_input" style="float: left; padding-left: 11px">' +
                       '<label for="daterangepicker_end">' + this.locale.toLabel + '</label>' +
-                      '<input class="input-mini" type="text" name="daterangepicker_end" value="" disabled="disabled" />' +
+                      '<input class="input-mini" type="text" id="daterangepicker_end" name="daterangepicker_end" value="" disabled="disabled" />' +
                     '</div>' +
                     '<button class="' + this.applyClass + ' applyBtn" disabled="disabled">' + this.locale.applyLabel + '</button>&nbsp;' +
                     '<button class="' + this.cancelClass + ' cancelBtn">' + this.locale.cancelLabel + '</button>' +
